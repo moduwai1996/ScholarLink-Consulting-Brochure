@@ -12,6 +12,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
+            scroll-behavior: smooth;
         }
         
         .serif-title {
@@ -20,12 +21,6 @@
 
         .gradient-bg {
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .step-number {
@@ -40,9 +35,26 @@
             font-weight: bold;
             flex-shrink: 0;
         }
+
+        .cta-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
     </style>
 </head>
 <body class="text-slate-800">
+
+    <!-- Floating Action Button for Mobile/Quick Access -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSebAQ5APJbrp8AyiyzKQg4WNhxxnRwq9WwOr_bdOUfPcoBJ-Q/viewform?usp=sharing" 
+       target="_blank"
+       class="fixed bottom-6 right-6 z-50 bg-yellow-400 text-blue-900 font-bold py-4 px-6 rounded-full shadow-2xl flex items-center gap-2 hover:bg-yellow-300 transition-all md:hidden cta-pulse">
+        <i class="fas fa-file-upload"></i> Apply Now
+    </a>
 
     <!-- Header / Hero Section -->
     <header class="gradient-bg text-white py-16 px-6 text-center">
@@ -53,6 +65,13 @@
             <p class="mt-8 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
                 In the competitive world of scholarships, standing out is crucial. We provide the expert guidance you need to secure your academic future.
             </p>
+            <div class="mt-10">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSebAQ5APJbrp8AyiyzKQg4WNhxxnRwq9WwOr_bdOUfPcoBJ-Q/viewform?usp=sharing" 
+                   target="_blank"
+                   class="inline-block bg-yellow-400 text-blue-900 font-bold text-lg py-4 px-10 rounded-lg shadow-lg hover:bg-yellow-300 transition-transform hover:-translate-y-1">
+                    Submit Your Application <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -119,6 +138,23 @@
                     <p class="text-sm text-slate-600">Support from drafting to error-free submission.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Document Submission Section -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center border-2 border-dashed border-blue-200 rounded-3xl p-10 bg-blue-50/30">
+            <i class="fas fa-cloud-upload-alt text-5xl text-blue-500 mb-6"></i>
+            <h2 class="text-3xl font-bold text-blue-900 mb-4">Ready to Submit Documents?</h2>
+            <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+                Once you have your materials ready, use our secure portal to submit your documentation for review. Our team will begin the identification and assessment process immediately.
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSebAQ5APJbrp8AyiyzKQg4WNhxxnRwq9WwOr_bdOUfPcoBJ-Q/viewform?usp=sharing" 
+               target="_blank"
+               class="inline-flex items-center bg-blue-600 text-white font-bold py-4 px-12 rounded-full hover:bg-blue-700 shadow-xl transition-all hover:scale-105">
+                <i class="fas fa-paper-plane mr-3"></i> Open Submission Form
+            </a>
+            <p class="mt-4 text-sm text-slate-500 italic">Estimated time to complete: 5-10 minutes</p>
         </div>
     </section>
 
